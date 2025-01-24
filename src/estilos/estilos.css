@@ -1,0 +1,100 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+
+    background-color: #f0f0f0;
+}
+.titulo h1{
+    font-size: 45px;
+    color: rgb(255, 255, 255);
+    font-family:'Courier New', Courier, monospace;
+}
+
+.section2{
+    margin-top: 100px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login h3{
+    margin: 3px;
+    display:grid;
+    margin-left: 30px;
+}
+
+.login input{
+    width: 500px;
+    height: 20px;
+    padding: 12px;
+    margin-right: 200px;
+    margin-left: 200px;
+    margin-bottom: 2%;
+    border-radius: 12px;
+    background-color: rgb(120, 116, 68);
+    border: 7px;
+    margin-top: 8px;
+    border-color: rgba(114, 110, 52, 0.974);
+    border-style: solid;
+    border-width: 2px;
+    color: white;
+}
+
+
+.login ::placeholder{
+    color: rgb(255, 255, 255); 
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.button{ 
+    font-size: 10px;
+    padding: 6px;
+    border-radius: 12px;
+    border: 7px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(141, 133, 50, 0.974);
+    border-style:solid;
+    border-width: 3px;
+    border-color: rgba(255, 12, 186, 0.974);
+    padding-left: 60px;
+    padding-right: 60px;
+    font-family: 'Courier New', Courier, monospace;
+    }
+    
+button:hover{
+    background-color:rgb(172, 175, 188);
+    color:rgb(7, 7, 7);
+    border-color: rgba(141, 143, 154, 0.974);
+    transition: all 1s ease;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-color: black;
+    background-image: url('../imagenes/borde.jpg');
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 90vh;
+    height: 50vh;
+    margin-left: 17%;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    padding:20vh;
+}
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(242, 242, 242);
+    max-width: 600px;
+}
+.section h1{
+    margin-bottom: 55px;
+}

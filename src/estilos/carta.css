@@ -1,0 +1,270 @@
+
+
+/* FORMULARIO MEJORADO CON EFECTOS NEÓN */
+.formulario {
+  display: flex;
+  position: absolute;
+  width: 60vh;
+  height: auto;
+  top: 400px;
+  left: 50%;
+  transform: translate(-50%, -50%) perspective(1000px) rotateX(5deg);
+  padding: 30px;
+  background: rgba(18, 18, 18, 0.95);
+  border: 2px solid rgba(231, 219, 54, 0.3);
+  border-radius: 15px;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 0 30px rgba(231, 219, 54, 0.1),
+              0px 0px 22px rgb(231, 219, 54);
+  backdrop-filter: blur(15px);
+  z-index: 1000;
+  display: none;
+  color: rgb(231, 219, 54);
+  font-size: 2.2vh;
+  
+}
+
+.formulario.mostrar {
+  opacity: 1;
+  transform: translate(-50%, -50%) perspective(1000px) rotateX(0);
+  box-shadow: 0 0 50px rgba(231, 219, 54, 0.3),
+              0 0 80px rgba(231, 219, 54, 0.2),
+              0 0 120px rgba(231, 219, 54, 0.1);
+}
+
+.cerrar-formulario {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  color: rgba(231, 219, 54, 0.8);
+  transition: all 0.3s ease;
+}
+
+.cerrar-formulario:hover {
+  transform: scale(1.2);
+  color: #ffd700;
+}
+
+/* CONTENEDOR DE PLATOS */
+.platos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+/* TARJETAS DE PLATOS MEJORADAS */
+.plato-card {
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  height: auto;
+  width: 325px;
+  border-radius: 15px;
+  margin: 20px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  color: wheat;
+  gap: 30px;
+}
+
+.plato-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, 
+      transparent 25%,
+      rgba(231, 219, 54, 0.1) 50%,
+      transparent 75%);
+  transform: rotate(45deg);
+  animation: holograma 6s infinite linear;
+  pointer-events: none;
+}
+
+.plato-card:hover {
+  transform: translateY(-5px) rotateX(2deg) rotateY(2deg) scale(1.1);
+  box-shadow: 0 15px 40px rgba(231, 219, 54, 0.3),
+              0 0 40px rgba(231, 219, 54, 0.1) inset;
+              cursor: pointer;
+  transition: 0.5s;
+}
+
+.plato-card h2 {
+  font-size: 1.5rem;
+  color: #ffd700;
+  margin: 20px 0 10px;
+  padding: 10px;
+  background: rgba(40, 40, 40, 0.9);
+  border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+  text-align: center;
+}
+
+.plato-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.2s ease;
+}
+
+.plato-card:hover img {
+
+  transform: scale(1.05);
+  filter: saturate(1.2) brightness(1.1);
+}
+
+/* ETIQUETAS MEJORADAS */
+.etiqueta {
+  background: rgba(40, 40, 40, 0.9);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: #ffd700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.etiqueta:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 215, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2);
+}
+
+/* FILTROS MEJORADOS */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 30px;
+  margin: 40px auto 30px;
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  max-width: 1400px;
+  margin-top: 100px;
+}
+
+.etiquetafilter {
+  padding: 12px 25px;
+  border-radius: 25px;
+  background: rgba(50, 50, 50, 0.7);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.etiquetafilter.active {
+  background: #ffd700;
+  color: #1a1a1a;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* ANIMACIONES */
+@keyframes holograma {
+  0% { transform: translateY(-50%) rotate(45deg); }
+  100% { transform: translateY(50%) rotate(45deg); }
+}
+
+/* MANTENIENDO ESTRUCTURA ORIGINAL */
+.plato-card button {
+  margin-top: 10px;
+}
+
+.dropzone-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin: 20px;
+  background: rgba(62, 62, 62, 0.25);
+  border: 2px dashed rgba(255, 215, 0, 0.3);
+  border-radius: 15px;
+  color: #ffd700;
+  transition: all 0.3s ease;
+}
+
+.formulario input[type="text"],
+.formulario textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid rgba(231, 219, 54, 0.3);
+  border-radius: 8px;
+  color: #ffd700;
+  transition: all 0.3s ease;
+}
+.search-filter-container>input {
+  width: 600px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 100px;
+  margin-left: 600px;
+  
+  /* Estilos profesionales agregados */
+  padding: 20px 40px;
+  font-size: 18px;
+  font-family: 'Segoe UI', system-ui;
+  letter-spacing: 0.5px;
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  color: #2d3436;
+}
+
+.search-filter-container>input:focus {
+  border-color: #4dabf7;
+  box-shadow: 0 4px 30px rgba(77, 171, 247, 0.25);
+  transform: translateY(-2px);
+}
+
+.search-filter-container>input::placeholder {
+  color: #95a5a6;
+  letter-spacing: 0.5px;
+}
+
+/* Opcional: ajuste para móviles manteniendo estructura base */
+@media (max-width: 1600px) {
+  .search-filter-container>input {
+    margin-left: calc(50% - 300px); /* Centrado horizontal proporcional */
+  }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .plato-card {
+      width: 280px;
+  }
+  
+  .plato-image {
+      height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formulario {
+      width: 90%;
+      padding: 20px;
+  }
+  
+  .plato-card {
+      width: 100%;
+      margin: 10px;
+  }
+}

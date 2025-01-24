@@ -1,0 +1,153 @@
+/* ESTILOS PROFESIONALES PARA FOOTER */
+.footer {
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    color: #fff;
+    padding: 2.5rem 5%;
+    margin-top: 400px;
+    position: relative;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.3);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ffd700, transparent);
+}
+
+.footer h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #ffd700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tm {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    vertical-align: super;
+}
+
+.redes {
+    display: flex;
+    gap: 1.5rem;
+    justify-self: end;
+}
+
+.redes a {
+    display: flex;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.redes a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.redes a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+}
+
+.redes a:hover::before {
+    left: 100%;
+}
+
+.redes img {
+    width: 28px;
+    height: 28px;
+
+    transition: filter 0.3s ease;
+}
+
+.redes a:hover img {
+    filter: brightness(1) invert(0);
+}
+
+.copyright {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 1.5rem 0 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+}
+
+/* ANIMACIONES */
+@keyframes slideIn {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.footer {
+    animation: slideIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 2rem 5%;
+    }
+    
+    .footer h1 {
+        justify-content: center;
+        font-size: 2rem;
+    }
+    
+    .redes {
+        justify-self: center;
+        order: 2;
+    }
+    
+    .copyright {
+        order: 3;
+        padding-top: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 1.5rem 5%;
+    }
+    
+    .redes {
+        gap: 1rem;
+    }
+    
+    .redes a {
+        padding: 0.6rem;
+    }
+    
+    .redes img {
+        width: 24px;
+        height: 24px;
+    }
+}
